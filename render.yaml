@@ -1,7 +1,0 @@
-services:
-  - type: cron
-    name: housing-bot-cron
-    env: python
-    schedule: "0 * * * *"  # once every hour
-    buildCommand: ""
-    startCommand: "python bot.py"
