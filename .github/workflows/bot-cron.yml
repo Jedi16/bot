@@ -29,6 +29,6 @@ jobs:
 
     - name: Run Python Bot
       run: |
-        # Make sure to set the path to use Chromium
-        export CHROMIUM_BIN="/usr/bin/chromium-browser"
+        # Set the CHROMIUM_BIN environment variable
+        echo "CHROMIUM_BIN=/usr/bin/chromium-browser" >> $GITHUB_ENV
         python mybot.py
