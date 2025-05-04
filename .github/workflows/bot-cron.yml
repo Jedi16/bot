@@ -24,4 +24,4 @@ jobs:
 
       - name: Run the bot
         run: |
-          python your-bot-script.py  # Replace with your actual bot script name
+          python bot.py  # Replace with your actual bot script name
