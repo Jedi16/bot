@@ -63,10 +63,11 @@ def run_bot():
 
    # service = Service(EDGE_DRIVER_PATH)
     options = Options()
-        
-    options.add_argument("--headless")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
+    options.binary_location = os.environ.get('CHROMIUM_BIN', '/usr/bin/chromium-browser')  # Default path for the runner
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+
     print("Launching Chrome WebDriver...", flush=True)
     driver = webdriver.Chrome(options=options)
 
