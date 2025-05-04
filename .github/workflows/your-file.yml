@@ -1,0 +1,27 @@
+name: Run Bot Every Hour
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # This runs the bot every hour at minute 0.
+  # You can also trigger this workflow manually from the GitHub Actions interface (optional)
+
+jobs:
+  run_bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Specify the Python version you are using
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run bot
+        run: |
+          python path/to/your_script.py  # Replace with the path to your script
